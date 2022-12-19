@@ -8,15 +8,19 @@
 </head>
 <body>
     {% load static %}
+    {% include '_navbar.html' %}
     {% block content %}
     {% endblock %}
 
     {% block extra_javascript %}
 
     <!-- React -->
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    
 
     {% endblock %}
 </body>

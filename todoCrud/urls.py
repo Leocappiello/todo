@@ -20,8 +20,13 @@ from todo import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('signin/', views.signin, name='signin'),
     path('signup/', views.signup, name='signup'),
     path('notes/', views.notes , name='notes'),
+    path('notes/<int:note_id>/', views.note_detail, name='note_detail'),
+    path('notes/<int:note_id>/complete', views.complete_note, name='complete_note'),
+    path('notes/<int:note_id>/delete', views.delete_note, name='delete_note'),
+    path('notes/create/', views.create_note , name='create_notes'),
     path('logout/', views.signout, name='logout'),
     path('login/', views.signin, name='login')
 ]

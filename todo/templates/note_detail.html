@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{error}}
+<h1>{{note.description}}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Update</button>
+    </form>
+
+    <form method="POST" action="{% url 'complete_note' note.id %}">
+        {% csrf_token %}
+        <button>Complete</button>
+    </form>
+
+    <form method="POST" action="{% url 'delete_note' note.id %}">
+        {% csrf_token %}
+        <button>Delete</button>
+    </form>
+{% endblock %}
